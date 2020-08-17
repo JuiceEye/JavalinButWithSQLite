@@ -11,11 +11,10 @@ public class StudentHandler implements StudentCommand {
     }
 
     @Override
-    public Handler create(Object student) throws SQLException {
+    public void create(Object student) throws SQLException {
         this.student = (Student) student;
         dao().create(this.student);
         System.out.println("Created student " + student);
-        return null;
     }
 
     @Override
@@ -26,19 +25,17 @@ public class StudentHandler implements StudentCommand {
     }
 
     @Override
-    public Handler update(Object student) throws SQLException {
+    public void update(Object student) throws SQLException {
         this.student = (Student) student;
         dao().update(this.student);
         System.out.println("Updated student " + student);
-        return null;
     }
 
     @Override
-    public Handler delete(int id) throws SQLException {
+    public void delete(int id) throws SQLException {
         student = dao().queryForId(id);
         System.out.println("Deleted" + student);
         dao().delete(student);
-        return null;
     }
 
     @Override
