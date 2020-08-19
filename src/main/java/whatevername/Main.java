@@ -1,3 +1,5 @@
+//Данные в таблицу записываются через запрос одной строкой
+
 package whatevername;
 
 import io.javalin.Javalin;
